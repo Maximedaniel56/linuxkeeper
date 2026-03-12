@@ -1,10 +1,10 @@
-# Maintainer: LinuxKeeper <maintainers@linuxkeeper.dev>
+# Maintainer: Maximedaniel56 <Maximedaniel56@users.noreply.github.com>
 pkgname=linuxkeeper
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="Linux audio keep-alive daemon - prevents BT/USB audio disconnection"
 arch=('x86_64' 'aarch64')
-url="https://github.com/linuxkeeper/linuxkeeper"
+url="https://github.com/Maximedaniel56/linuxkeeper"
 license=('MIT')
 depends=('alsa-lib')
 makedepends=('cmake' 'gcc' 'pkg-config' 'alsa-lib' 'libpulse' 'pipewire')
@@ -12,11 +12,15 @@ optdepends=(
     'pipewire: PipeWire audio backend'
     'libpulse: PulseAudio audio backend'
 )
-source=("$pkgname-$pkgver.tar.gz")
+provides=('linuxkeeper')
+conflicts=('linuxkeeper-git')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/Maximedaniel56/linuxkeeper/archive/refs/heads/main.tar.gz")
+# NOTE: Update source to use tag URL once v${pkgver} tag is created:
+# source=("$pkgname-$pkgver.tar.gz::https://github.com/Maximedaniel56/linuxkeeper/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=('SKIP')
 
 build() {
-    cd "$pkgname-$pkgver"
+    cd "$srcdir/$pkgname-main"
     cmake -B build \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
@@ -25,7 +29,7 @@ build() {
 }
 
 package() {
-    cd "$pkgname-$pkgver"
+    cd "$srcdir/$pkgname-main"
     DESTDIR="$pkgdir" cmake --install build
 
     install -Dm644 linuxkeeper.service "$pkgdir/usr/lib/systemd/user/linuxkeeper.service"

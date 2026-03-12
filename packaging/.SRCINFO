@@ -1,0 +1,23 @@
+pkgbase = linuxkeeper
+	pkgdesc = Linux audio keep-alive daemon - prevents BT/USB audio disconnection
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/Maximedaniel56/linuxkeeper
+	arch = x86_64
+	arch = aarch64
+	license = MIT
+	makedepends = cmake
+	makedepends = gcc
+	makedepends = pkg-config
+	makedepends = alsa-lib
+	makedepends = libpulse
+	makedepends = pipewire
+	depends = alsa-lib
+	optdepends = pipewire: PipeWire audio backend
+	optdepends = libpulse: PulseAudio audio backend
+	provides = linuxkeeper
+	conflicts = linuxkeeper-git
+	source = linuxkeeper-1.0.0.tar.gz::https://github.com/Maximedaniel56/linuxkeeper/archive/refs/heads/main.tar.gz
+	sha256sums = SKIP
+
+pkgname = linuxkeeper
