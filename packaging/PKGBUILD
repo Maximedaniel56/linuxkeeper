@@ -14,13 +14,11 @@ optdepends=(
 )
 provides=('linuxkeeper')
 conflicts=('linuxkeeper-git')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/Maximedaniel56/linuxkeeper/archive/refs/heads/main.tar.gz")
-# NOTE: Update source to use tag URL once v${pkgver} tag is created:
-# source=("$pkgname-$pkgver.tar.gz::https://github.com/Maximedaniel56/linuxkeeper/archive/refs/tags/v${pkgver}.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/Maximedaniel56/linuxkeeper/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=('SKIP')
 
 build() {
-    cd "$srcdir/$pkgname-main"
+    cd "$srcdir/$pkgname-$pkgver"
     cmake -B build \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
@@ -29,7 +27,7 @@ build() {
 }
 
 package() {
-    cd "$srcdir/$pkgname-main"
+    cd "$srcdir/$pkgname-$pkgver"
     DESTDIR="$pkgdir" cmake --install build
 
     install -Dm644 linuxkeeper.service "$pkgdir/usr/lib/systemd/user/linuxkeeper.service"
