@@ -1,0 +1,38 @@
+name: linuxkeeper
+version: '1.0.0'
+summary: Linux audio keep-alive daemon
+description: |
+  Prevents Bluetooth/USB audio devices from disconnecting by playing
+  silent audio at configurable intervals. Supports PulseAudio, ALSA,
+  PipeWire, and OSS backends.
+
+grade: stable
+confinement: strict
+base: core22
+
+apps:
+  linuxkeeper:
+    command: usr/bin/linuxkeeper
+    daemon: simple
+    plugs:
+      - audio-playback
+      - pulseaudio
+      - alsa
+
+parts:
+  linuxkeeper:
+    plugin: cmake
+    source: .
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DWITH_PIPEWIRE=OFF
+      - -DWITH_SYSTEMD=OFF
+    build-packages:
+      - cmake
+      - gcc
+      - pkg-config
+      - libasound2-dev
+      - libpulse-dev
+    stage-packages:
+      - libasound2
+      - libpulse0
