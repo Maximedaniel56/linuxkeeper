@@ -1,0 +1,47 @@
+# LinuxKeeper Configuration
+# ========================
+# Copy this file to ~/.config/linuxkeeper/config.toml
+
+[audio]
+# Audio backend selection. Options: auto, pipewire, pulseaudio, alsa, oss
+# "auto" tries backends in order: pipewire -> pulseaudio -> alsa -> oss
+backend = "auto"
+
+# Sample rate in Hz (default: 44100)
+sample_rate = 44100
+
+# Number of audio channels (default: 2 for stereo)
+channels = 2
+
+# Audio buffer size in frames (default: 2048)
+# Larger values = more latency but fewer underruns
+buffer_size = 2048
+
+# Target audio devices to keep alive.
+# Use "default" for the system default output.
+# Use specific device names from `linuxkeeper --list-devices`
+# Use "all" to keep all output devices alive.
+# Multiple devices can be specified.
+target_devices = ["default"]
+
+[daemon]
+# Log verbosity: debug, info, warn, error
+log_level = "info"
+
+# Log file path. Empty = stderr (foreground) or journald (service mode)
+log_file = ""
+
+# PID file location. {UID} is replaced with your user ID.
+# pid_file = "/run/user/{UID}/linuxkeeper.pid"
+
+# Maximum watchdog reconnect interval in seconds.
+# On stream failure, retries with exponential backoff up to this value.
+watchdog_max_interval = 30
+
+[stream]
+# Automatically reconnect when audio device changes (hotplug)
+reconnect_on_device_change = true
+
+# Special mode: automatically keep ALL detected Bluetooth audio sinks alive.
+# Useful if you have multiple BT devices that frequently disconnect.
+keep_all_bt_devices = false

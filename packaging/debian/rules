@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr
+
+override_dh_auto_install:
+	dh_auto_install
+	install -Dm644 linuxkeeper.service debian/linuxkeeper/usr/lib/systemd/user/linuxkeeper.service
+	install -Dm644 linuxkeeper.toml.example debian/linuxkeeper/etc/linuxkeeper/config.toml.example

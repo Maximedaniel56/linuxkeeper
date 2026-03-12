@@ -1,0 +1,26 @@
+Source: linuxkeeper
+Section: sound
+Priority: optional
+Maintainer: LinuxKeeper Maintainers <maintainers@linuxkeeper.dev>
+Build-Depends: debhelper-compat (= 13),
+               cmake (>= 3.16),
+               gcc,
+               pkg-config,
+               libasound2-dev,
+               libpulse-dev,
+               libpipewire-0.3-dev,
+               libsystemd-dev
+Standards-Version: 4.6.0
+Homepage: https://github.com/linuxkeeper/linuxkeeper
+
+Package: linuxkeeper
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libasound2
+Recommends: libpulse0, pipewire
+Description: Linux audio keep-alive daemon
+ LinuxKeeper keeps Bluetooth and USB audio devices alive by continuously
+ playing inaudible silent audio, preventing automatic disconnection or
+ power-saving suspend on audio interfaces.
+ .
+ This is the Linux equivalent of Windows SoundKeeper. It supports
+ PipeWire, PulseAudio, ALSA, and OSS backends with automatic detection.

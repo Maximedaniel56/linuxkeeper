@@ -1,0 +1,22 @@
+[Unit]
+Description=LinuxKeeper - Audio Keep-Alive Daemon
+Documentation=https://github.com/linuxkeeper/linuxkeeper
+After=pipewire.service pulseaudio.service
+Wants=pipewire.service
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/linuxkeeper
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5
+
+# Security hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=yes
+ReadWritePaths=/run/user/%U
+
+[Install]
+WantedBy=default.target

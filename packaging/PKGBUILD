@@ -1,0 +1,34 @@
+# Maintainer: LinuxKeeper <maintainers@linuxkeeper.dev>
+pkgname=linuxkeeper
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Linux audio keep-alive daemon - prevents BT/USB audio disconnection"
+arch=('x86_64' 'aarch64')
+url="https://github.com/linuxkeeper/linuxkeeper"
+license=('MIT')
+depends=('alsa-lib')
+makedepends=('cmake' 'gcc' 'pkg-config' 'alsa-lib' 'libpulse' 'pipewire')
+optdepends=(
+    'pipewire: PipeWire audio backend'
+    'libpulse: PulseAudio audio backend'
+)
+source=("$pkgname-$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname-$pkgver"
+    cmake -B build \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -Wno-dev
+    cmake --build build
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    DESTDIR="$pkgdir" cmake --install build
+
+    install -Dm644 linuxkeeper.service "$pkgdir/usr/lib/systemd/user/linuxkeeper.service"
+    install -Dm644 linuxkeeper.toml.example "$pkgdir/etc/linuxkeeper/config.toml.example"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
