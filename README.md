@@ -26,11 +26,20 @@ LinuxKeeper continuously plays **true silence** (zero-filled PCM buffers) to you
 - **Hotplug-aware**: Detects device connect/disconnect events
 - **Configurable**: TOML config file with sensible defaults
 
-## Quick Install
+## Install
+
+### Snap (recommended)
 
 ```bash
-# Build and install (auto-detects your distro and installs dependencies)
-git clone https://github.com/linuxkeeper/linuxkeeper.git
+sudo snap install linuxkeeper --classic
+```
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/linuxkeeper)
+
+### Build from source
+
+```bash
+git clone https://github.com/Maximedaniel56/linuxkeeper.git
 cd linuxkeeper
 ./install.sh
 ```

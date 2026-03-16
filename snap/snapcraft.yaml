@@ -7,17 +7,12 @@ description: |
   PipeWire, and OSS backends.
 
 grade: stable
-confinement: strict
+confinement: classic
 base: core22
 
 apps:
   linuxkeeper:
     command: usr/bin/linuxkeeper
-    daemon: simple
-    plugs:
-      - audio-playback
-      - pulseaudio
-      - alsa
 
 parts:
   linuxkeeper:
@@ -26,6 +21,7 @@ parts:
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DWITH_PIPEWIRE=OFF
+      - -DWITH_OSS=OFF
       - -DWITH_SYSTEMD=OFF
     build-packages:
       - cmake
@@ -36,3 +32,4 @@ parts:
     stage-packages:
       - libasound2
       - libpulse0
+      - alsa-ucm-conf
