@@ -1,0 +1,33 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: LinuxKeeper
+Label: LinuxKeeper
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: LinuxKeeper APT repository
+MD5Sum:
+ 5aff8d8b44fb5972830b8516e236ed7b 713 main/binary-amd64/Packages
+ 442bcc3cc5c6fc20d3623a44865c11d1 481 main/binary-amd64/Packages.gz
+SHA256:
+ d7b8d0c855712d38e7823c501842e4732e280b2744c0a0f5ee6b673ae3101b88 713 main/binary-amd64/Packages
+ 6c7a7d2f3f454230bed7399a572971c00a9de95bff31357eba7405da1932d897 481 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQJQBAEBCgA6FiEEllCY2w9VCWFPfFEEgv2H2Tx0CkkFAmm30QocHG1haW50YWlu
+ZXJzQGxpbnV4a2VlcGVyLmRldgAKCRCC/YfZPHQKSUHiEACEFRlYfgdvOyNv42vK
+YefCGTTzGWUMG6gZPCh8TQLHr9N7EWLRDuiY7MpoVp4JwWR96oB7fVYA+KaAdk37
+XMmFil+I5m08Kx4fXDXNubXTrlCH2l4ZuzrsC9LVoLlq2j/E8Pk632fRGVDpJtJI
+Q/rT09CgNQ/JAHrVorji7UpQfcvevkLaHkv5IwAh7r1Dl9peVgOyJ3Dw86fCri8Z
+N/B5g72aa5bUsPQnc9tw0zGt1MxBLkc9rJQHAav6BrZBk+SmirGdFSpKG3hVuNOO
+q6OmsUEWwPNZZfYebAyESe+yhLJ7jvPe5OT8oXJSBf//4infaJuIBVAZRezsolhg
+c/tzyaFvMCe/jNLsLemO/ORg8qxIYkd2HvWnEma7HWJ87qWj9Wz1JFUZwPLhw5B1
+sJ9cx7i8z7LnF+vgaJ0Z25ie2i4iJG0uThKCDTY9BXmA+kLM9Rd0iCKVzSPYTWZO
+Fpa/8U4EyiKKK3cnjphWsz+mkYmye09FIv1/ver8bnceclo9c0Z4vdTi/iPEO/ye
+bQ/L2//AklQdyCNZkPd0ImO/F7wpJGdUu2DfaWf4nbiWxoRW84nW+9cD+xieyIBy
+notB8Xy+Rj2DWJC2VSL1nc6F4u1pmYSNG2JsUjMjvrVqXQzBk9k18tI5L4455/8B
+R9JpzcIrR12ZGEIe401ZTeOLGg==
+=TWFB
+-----END PGP SIGNATURE-----

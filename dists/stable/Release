@@ -1,0 +1,13 @@
+Origin: LinuxKeeper
+Label: LinuxKeeper
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: LinuxKeeper APT repository
+MD5Sum:
+ 5aff8d8b44fb5972830b8516e236ed7b 713 main/binary-amd64/Packages
+ 442bcc3cc5c6fc20d3623a44865c11d1 481 main/binary-amd64/Packages.gz
+SHA256:
+ d7b8d0c855712d38e7823c501842e4732e280b2744c0a0f5ee6b673ae3101b88 713 main/binary-amd64/Packages
+ 6c7a7d2f3f454230bed7399a572971c00a9de95bff31357eba7405da1932d897 481 main/binary-amd64/Packages.gz

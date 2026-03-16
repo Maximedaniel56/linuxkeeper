@@ -1,0 +1,19 @@
+Package: linuxkeeper
+Version: 1.0.0
+Architecture: amd64
+Maintainer: LinuxKeeper Maintainers <maintainers@linuxkeeper.dev>
+Depends: libasound2
+Recommends: libpulse0, pipewire
+Filename: pool/main/linuxkeeper_1.0.0_amd64.deb
+Size: 17070
+MD5sum: 6a8000ecbe1a66c880de5666c17af581
+SHA1: 225ad69770bf5cdaf8315b89ca0af48c3a15e903
+SHA256: f91de35f1eb60d45ba0cfdc500fa65300f47d99594ee2128d29a4139f6642085
+Section: sound
+Priority: optional
+Homepage: https://github.com/linuxkeeper/linuxkeeper
+Description: Linux audio keep-alive daemon
+ LinuxKeeper keeps Bluetooth and USB audio devices alive by continuously
+ playing inaudible silent audio, preventing automatic disconnection or
+ power-saving suspend on audio interfaces.
+
